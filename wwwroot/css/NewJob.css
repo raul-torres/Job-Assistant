@@ -1,0 +1,44 @@
+body{
+    overflow-x: hidden;
+}
+.top{
+    margin-top: 5%;
+}
+.form-control{
+    border:none;
+    border-bottom: 1px solid #1890ff;
+    padding: 5px 10px;
+    outline: none;
+    background-color: transparent;
+    margin-bottom: 9%;
+}
+    .form-control{
+        background-color: transparent;
+    }
+.textArea{
+    border: 1px solid #1890ff;
+}
+.dateIn{
+    margin-bottom: 6%;
+}
+.dateDesc{
+    color: rgb(109, 109, 109);
+    font-size: small;
+    margin-left: 1%;
+}
+.logo{
+    width: 12%;
+}
+.return{
+    margin-bottom: 6%;
+}
+.validations{
+    font-size: small;
+    color: red;
+}
+
+@media only screen and (max-width: 600px){
+    .logo{
+        width: 30%;
+    }
+}

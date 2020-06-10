@@ -1,0 +1,47 @@
+body{
+    background-image: url("../img/cwhite.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    overflow: hidden;
+}
+
+.form-group{
+    margin-bottom: 10%;
+}
+.thisInput{
+    border:none;
+    border-bottom: 1px solid #1890ff;
+    padding: 5px 10px;
+    outline: none;
+    background-color: transparent;
+}
+.thisInput:focus{
+    background-color: transparent;
+}
+.getStarted{
+    margin-top: 4%;
+}
+.logo{
+    width: 12%;
+}
+.login{
+    margin-bottom: 2%;
+}
+.error1{
+    font-size: small;
+    color: red;
+}
+
+@media only screen and (max-width: 600px){
+    .logo{
+        width: 31%;
+    }
+    .getStarted{
+        margin-top: 30%;
+    }
+    .login{
+        margin-bottom: 11%;
+    }
+}

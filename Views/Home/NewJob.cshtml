@@ -1,0 +1,43 @@
+@model Job
+
+<head>
+    <link rel="stylesheet" href="~/css/NewJob.css">
+</head>
+
+<a href="/home">
+    <img src="~/img/logo.png" alt="Logo" class="logo">     
+</a>
+@* Header *@
+<h1 class="top text-center fontHead">Let's Add A New Job</h1>
+<p class="return text-center">
+    <a href="/home">Return to Home</a>
+</p>
+
+<form action="/jobadder" method="post">
+    <div class="fontBody row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span asp-validation-for="Company" class="validations"></span>
+                    <input asp-for="Company" class="form-control" placeholder="Company Name">
+                </div>
+                <div class="form-group">
+                    <span asp-validation-for="AppliedWebsite" class="validations"></span>
+                    <input asp-for="AppliedWebsite" class="dateIn form-control" placeholder="Where did you apply">
+                </div>
+                <div class="form-group">
+                    <span class="dateDesc">Date application was submitted</span>
+                    <span asp-validation-for="AppliedDate" class="validations"></span>
+                    <input asp-for="AppliedDate" class="form-control" type="date">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group">
+                    <span asp-validation-for="JobNotes" class="validations"></span>
+                    <textarea asp-for="JobNotes" id="" cols="30" rows="10" class="textArea form-control" placeholder="Job Notes"></textarea>
+                </div>
+            </div>
+    </div>
+    <p class="text-center">
+        <input type="submit" value="Add Job" class="btn btn-outline-primary">
+    </p>
+</form>

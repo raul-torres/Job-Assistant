@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="~/css/Login.css">
+
+@model LoginUser
+
+<div class="row">
+    <div class="col-md-4">
+        <a href="/login">
+            <img src="~/img/logo.png" alt="Logo" class="logo">     
+        </a>
+    </div>
+    <div class="col-md-4">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 class="fontHead text-center">Welcome Back</h1>
+        <div class="fontBody text-center">
+            <span>Or</span> <a href="/"> Create an Account</a>
+        </div>
+        <h4></h4>
+        <br>
+        <form action="/access" method="post" class="fontBody">
+            <span asp-validation-for="LEmail" class="validations"></span>
+            <input asp-for="LEmail" class="form-control" placeholder="User Name" value="raul@mail.com">
+            <br>
+            <span asp-validation-for="LPassword" class="validations"></span>
+            <input asp-for="LPassword" class="form-control" placeholder="Password" value="Q@123456789">
+            <br>
+            <div class="text-center">
+                <input type="submit" value="Sign In" class="btn btn-outline-primary">
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4"></div>
+</div>
