@@ -17,17 +17,39 @@ namespace JobAssistant.Migrations
                 .HasAnnotation("ProductVersion", "2.2.4-servicing-10062")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
+            modelBuilder.Entity("JobAssistant.Models.Goal", b =>
+                {
+                    b.Property<int>("GoalId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int?>("Amount")
+                        .IsRequired();
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<int>("SoFar");
+
+                    b.Property<DateTime>("UpdatedAt");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("GoalId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Goals");
+                });
+
             modelBuilder.Entity("JobAssistant.Models.Job", b =>
                 {
                     b.Property<int>("JobId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<DateTime>("AppliedDate")
+                    b.Property<DateTime>("ADate")
                         .HasColumnType("Date");
 
-                    b.Property<string>("AppliedWebsite")
-                        .IsRequired()
-                        .HasMaxLength(25);
+                    b.Property<string>("ClosedNotes")
+                        .HasMaxLength(233);
 
                     b.Property<string>("Company")
                         .IsRequired()
@@ -35,17 +57,25 @@ namespace JobAssistant.Migrations
 
                     b.Property<DateTime>("CreatedAt");
 
-                    b.Property<string>("JobNotes")
+                    b.Property<string>("Notes")
                         .HasMaxLength(233);
 
-                    b.Property<DateTime>("ResponseDate")
+                    b.Property<string>("Position")
+                        .IsRequired()
+                        .HasMaxLength(27);
+
+                    b.Property<DateTime>("RDate")
                         .HasColumnType("Date");
+
+                    b.Property<string>("Status");
 
                     b.Property<DateTime>("UpdatedAt");
 
                     b.Property<int>("UserId");
 
-                    b.Property<string>("status");
+                    b.Property<string>("Website")
+                        .IsRequired()
+                        .HasMaxLength(25);
 
                     b.HasKey("JobId");
 
@@ -64,6 +94,8 @@ namespace JobAssistant.Migrations
                     b.Property<string>("Email")
                         .IsRequired();
 
+                    b.Property<bool>("HasGoal");
+
                     b.Property<string>("Name")
                         .IsRequired();
 
@@ -75,6 +107,14 @@ namespace JobAssistant.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("JobAssistant.Models.Goal", b =>
+                {
+                    b.HasOne("JobAssistant.Models.User", "Creator")
+                        .WithMany("CreatedGoald")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("JobAssistant.Models.Job", b =>

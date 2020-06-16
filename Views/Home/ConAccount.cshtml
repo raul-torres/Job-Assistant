@@ -1,0 +1,60 @@
+@model LoginUser
+
+<head>
+    <link rel="stylesheet" href="~/css/ThisJob.css">
+    <link rel="stylesheet" href="~/css/Edit.css">
+    <link rel="stylesheet" href="~/css/Login.css">
+</head>
+
+<div class="row">
+    <div class="col-xs-4 col-md-4">
+        <a href="#" class="fontHead options topbtn btn btn-success disabled">&nbsp;</a>
+    </div>
+    <div class="col-xs-4 col-md-4">
+        <p class="text-center">
+            <a href="/home">
+                <img src="~/img/logo.png" alt="Logo" class="logo">     
+            </a>
+        </p>
+    </div>
+    <div class="col-xs-4 col-md-4">
+        <a href='javascript:history.go(-1)' class="fontHead options topbtn btn btn-warning">Go Back</a>
+    </div>
+</div>
+
+<br>
+<br>
+
+<h1 class="text-center fontHead">Please Confirm Your Password</h1>
+
+<br>
+<br>
+<br>
+
+<form action="/accountaccess" method="post">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="form-group hidden">
+                <span asp-validation-for="LEmail" class="validations"></span>
+                <input asp-for="LEmail" class="form-control" placeholder="User Name" value="@ViewBag.ThisUser.Email" type="hidden">
+            </div>
+            <div class="form-group">
+                <span asp-validation-for="LPassword" class="validations"></span>
+                <input asp-for="LPassword" class="text-center form-control" placeholder="Password">
+            </div>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <br>
+            <br>
+            <p class="text-center">
+                <input type="submit" value="Access" class="btn btn-outline-primary">
+            </p>
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</form>

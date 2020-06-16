@@ -27,6 +27,8 @@ namespace JobAssistant.Models
         [RegularExpression("^.*(?=.{6,18})(?=.*)(?=.*[A-Za-z]).*$", ErrorMessage = "Password must contain atleast 1 letter, 1 number")]
         public string Password {get;set;}
 
+        public bool HasGoal {get;set;} = false;
+
 /* -------------------------------------------------------------------------------- */
 // DATETIMEs
         public DateTime CreatedAt {get;set;} = DateTime.Now;
@@ -38,13 +40,21 @@ namespace JobAssistant.Models
 
         public List<Job> AppliedJobs {get;set;}
 
+        public List<Goal> CreatedGoald {get;set;}
+
+
 /* -------------------------------------------------------------------------------- */
-// PASSWORD COMPARINg
+// PASSWORD COMPARING
 
         [NotMapped]
         [Compare("Password", ErrorMessage="Passwords do not match")]
         [DataType(DataType.Password)]
         public string ConfirmedPassword {get;set;}
 
+        [NotMapped]
+        [DataType(DataType.Password)]
+        public string OldPassword {get;set;}
+
+        
     }
 }

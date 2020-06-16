@@ -1,0 +1,62 @@
+@model Goal
+<head>
+    <link rel="stylesheet" href="~/css/ThisJob.css">
+    <link rel="stylesheet" href="~/css/NewJob.css">
+</head>
+
+<div class="row">
+    <div class="col-4">
+        <a href="#" class="fontHead options topbtn btn btn-outline-success disabled">&nbsp;</a>
+    </div>
+    <div class="col-4">
+        <p class="text-center">
+            <a href="/home">
+                <img src="~/img/logo.png" alt="Logo" class="logo">     
+            </a>
+        </p>
+    </div>
+    <div class="col-4">
+        <a href='javascript:history.go(-1)' class="fontHead text-dark options topbtn btn btn-outline-warning">Go Back</a>
+    </div>
+</div>
+
+<h1 class="top text-center fontHead">New Goal</h1>
+<hr class="colorhr">
+
+<div class="jumbotron">
+    <form action="/creategoal" method="post">
+        <div class="fontBody row">
+                <div class="col-md-6">
+                    <div class="form-group pushTop">
+                        <span asp-validation-for="Amount" class="validations"></span>
+                        <input asp-for="Amount" class="form-control lowerMarBot" placeholder="Number of jobs you aim to apply for">
+                    </div>
+                    @* <div class="form-group">
+                        <span class="dateDesc">How often will this goal occure?</span>
+                        <span asp-validation-for="Occurrence" class="dateVal validations"></span>
+                        <select asp-for="Occurrence" id="Occurrence" class="applied text-center form-control">
+                                <option value="Reached" class="applied">Until Goal is Reached</option>
+                                <option value="Day" class="contact">Every Day</option>
+                                <option value="Week"class="interview">Every Week</option>
+                                <option value="Month" class="offer">Every Month</option>
+                        </select>
+                    </div> *@
+                    <p class="text-center">
+                        <input type="submit" value="Create Goal" class="btn btn-outline-primary">
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    @* <div class="form-group">
+                        <span class="dateDesc">When will goal start?</span>
+                        <span asp-validation-for="StartDate" class="validations"></span>
+                        <input asp-for="StartDate" class="position form-control" placeholder="StartDate" type="date">
+                    </div>
+                    <div class="form-group">
+                        <span class="dateDesc">When will goal end?</span>
+                        <span asp-validation-for="EndDate" class="validations"></span>
+                        <input asp-for="EndDate" class="position form-control" placeholder="EndDate" type="date">
+                    </div> *@
+                </div>
+        </div>
+    </form>
+</div>

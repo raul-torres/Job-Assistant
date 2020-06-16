@@ -1,0 +1,143 @@
+
+@model User
+
+<head>
+    <link rel="stylesheet" href="~/css/Account.css">
+    <link rel="stylesheet" href="~/css/ThisJob.css">
+    <link rel="stylesheet" href="~/css/Edit.css">
+    @* <link rel="stylesheet" href="~/css/Login.css"> *@
+</head>
+
+<div class="row">
+    <div class="col-xs-4 col-md-4">
+        <a href="/home">
+            <img src="~/img/logo.png" alt="Logo" class="logo">     
+        </a>
+    </div>
+    <div class="col-xs-4 col-md-4"></div>
+    <div class="col-xs-4 col-md-4">
+        <a href='/home' class="fontHead options topbtn text-dark btn btn-outline-warning">Back To Home</a>
+    </div>
+</div>
+
+<br>
+<br>
+
+
+<br>
+<br>
+<br>
+
+<div class="jumbotron fontBody">
+    <h1 class="text-center fontBody heading">Account Settings</h1>
+    <hr class="colorhr">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="label">Name</label>
+            <p class="infoPiece">@Model.Name</p>
+        </div>
+        <div class="col-md-6">
+            <p class="text-right">
+                <a href="/updatename" class="update">Update account name</a>
+            </p>
+        </div>
+    </div>
+    <hr class="reghr">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="label">Email</label>
+            <p class="infoPiece">@Model.Email</p>
+        </div>
+        <div class="col-md-6">
+            <p class="text-right">
+                <a href="/updateemail" class="update">Change email</a>
+            </p>
+        </div>
+    </div>
+    <hr class="reghr">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="label">Password</label>
+            <p class="infoPiece">******</p>
+        </div>
+        <div class="col-md-6">
+            <p class="text-right">
+                <a href="/updatepassword" class="update">Change password</a>
+            </p>
+        </div>
+    </div>
+    <hr class="reghr">
+    @* <div class="row">
+        <div class="col-md-6">
+            <label class="label">Password required to access MyAccount</label>
+            @{
+                if(@Model.NeedsPass == true){
+                    <p class="infoPiece">Yes require password</p>
+                } else{
+                    <p class="infoPiece">Don't require password</p>
+                }
+            }
+        </div>
+        <div class="col-md-6">
+            <p class="text-right">
+                @{
+                    if(@Model.NeedsPass == true){
+                        <a href="/updatepassfalse" class="update">Change to not require</a>
+                    } else{
+                        <a href="/updatepasstrue" class="update">Change to require</a>
+                    }
+                }
+            </p>
+        </div>
+    </div>
+    <hr class="reghr"> *@
+</div>
+
+<div class="jumbotron fontBody">
+    <h1 class="text-center fontBody heading">Statistics</h1>
+    <hr class="colorhr">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="label">Total applied jobs</label>
+            <p class="infoPiece">@Model.AppliedJobs.Count</p>
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+    <hr class="reghr">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="label">Total responded jobs</label>
+            @{
+                int WJobs = 0;
+                foreach(Job Y in @Model.AppliedJobs)
+                {
+                    if(Y.Status == "Contact Made" || Y.Status == "Interview" || Y.Status == "Offer Made")
+                    {
+                        WJobs++;
+                    }
+                }
+                <p class="infoPiece">@WJobs</p>
+            }
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+    <hr class="reghr">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="label">Total closed jobs</label>
+            @{
+                int CJobs = 0;
+                foreach(Job Z in @Model.AppliedJobs)
+                {
+                    if(Z.Status == "Closed Job")
+                    {
+                        CJobs++;
+                    }
+                }
+                <p class="infoPiece">@CJobs</p>
+            }
+        </div>
+        <div class="col-md-6"></div>
+    </div>
+    <hr class="reghr">
+</div>

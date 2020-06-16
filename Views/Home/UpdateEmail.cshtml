@@ -1,0 +1,44 @@
+@model User
+
+<head>
+    <link rel="stylesheet" href="~/css/Account.css">
+    <link rel="stylesheet" href="~/css/ThisJob.css">
+    <link rel="stylesheet" href="~/css/Edit.css">
+</head>
+
+<div class="row">
+    <div class="col-xs-4 col-md-4">
+        <a href="/home">
+            <img src="~/img/logo.png" alt="Logo" class="logo">     
+        </a>
+    </div>
+    <div class="col-xs-4 col-md-4"></div>
+    <div class="col-xs-4 col-md-4">
+        <a href='/account' class="fontHead options topbtn btn btn-outline-warning text-dark">Back To MyAccount</a>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="jumbotron fontBody">
+    <h1 class="text-center fontBody heading">Update Account Email</h1>
+    <br>
+    <br><br>
+    <form action="/saveupdateemail" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="error1" asp-validation-for="Email"></span>
+                <input placeholder="Name" class="thisInput form-control" asp-for="Email">
+                <br>
+                <input type="submit" value="Save Email" class="btn btn-outline-primary">
+
+                <a href="/account" class="cancel">Cancel Changes</a>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
+    </form>
+
+</div>

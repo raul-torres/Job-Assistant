@@ -1,13 +1,13 @@
 @model List<Job>
 
 <head>
+    <link rel="stylesheet" href="~/css/ClosedJobs.css">
     <link rel="stylesheet" href="~/css/Home.css">
-    <script src="~/js/close.js"></script>
 </head>
 
 
 @* NAVBAR *@
-<nav class="nav1 fontHead navbar navbar-expand-lg navbar-light bg-light">
+<nav class="fontHead nav1 navbar navbar-expand-lg navbar-light bg-light">
   @* <a class="navbar-brand" href="#">Navbar</a> *@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -15,17 +15,14 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      @* <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li> *@
       <li class="nav-item">
         <a href="/respondedjobs" class="nav-item nav-link text-primary">Responded Jobs</a>
       </li>
       <li class="nav-item active">
-        <a href="/home" class="nav-item nav-link text-muted disabled">Waiting Jobs <span class="sr-only">(current)</span></a>
+        <a href="/home" class="nav-item nav-link text-primary">Waiting Jobs <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a href="/closedjobs" class="nav-item nav-link text-primary">Closed jobs</a>
+        <a href="/closedjobs" class="nav-item nav-link text-muted disable">Closed jobs</a>
       </li>
       <li class="nav-item">
         <a href="/newjob" class="nav-item nav-link text-primary">New Job</a>
@@ -35,7 +32,7 @@
       <a href="/home" class="form-inline my-2 my-lg-0">
         <img src="~/img/logo.png" alt="Logo" class="logo">     
       </a>
-      <a class="nav-item nav-link text-primary" href="/account">Account</a>
+      <a class="nav-item nav-link text-primary form-inline my-2 my-lg-0" href="/account">Account</a>
       <a class="nav-item nav-link text-danger form-inline my-2 my-lg-0" href="/logout">Sign Out</a>
     </div>
   </div>
@@ -51,8 +48,8 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a href="/respondedjobs" class="nav-item nav-link text-primary">Responded Jobs</a>
-      <a href="/home" class="nav-item nav-link text-muted disable">Waiting Jobs <span class="sr-only">(current)</span></a>
-      <a href="/closedjobs" class="nav-item nav-link text-primary">Closed jobs</a>
+      <a href="/home" class="nav-item nav-link text-primary">Waiting Jobs <span class="sr-only">(current)</span></a>
+      <a href="/closedjobs" class="nav-item nav-link text-muted disable">Closed jobs</a>
       <a href="/newjob" class="nav-item nav-link text-primary">New Job</a>
       <a class="nav-item nav-link text-primary" href="/account">Account</a>
       <a class="nav-item nav-link text-danger" href="/logout">Sign Out</a>
@@ -79,7 +76,7 @@
   } else if(ViewBag.HP == 1){
       <div class="row">
         <div class="col-md-4">
-          <a href="/thisgoal/@ViewBag.Goal.GoalId">
+          <a href="/thiscompgoal/@ViewBag.Goal.GoalId">
             <div class="goals fontBody">
               <h5>Today's Goal: Apply to @ViewBag.Goal.Amount jobs</h5>
               <span class="fontBody"> <span class="text-primary numBer">@ViewBag.Goal.SoFar / @ViewBag.Goal.Amount</span> jobs Applied</span>
@@ -93,7 +90,7 @@
   } else{
     <div class="row">
         <div class="col-md-4">
-          <a href="/thiscompgoal/@ViewBag.Goal.GoalId">
+          <a href="/thisgoal/@ViewBag.Goal.GoalId">
             <div class="goalComp goal3 fontBody">
               <h5 class="text-center goal3">Awesome you reached your goal</h5>
               <p class="text-center">
@@ -109,11 +106,9 @@
   }
 }
 
-
-
 <br>
 <br>
-<h1 class="text-center fontHead">Waiting Jobs</h1>
+<h1 class="text-center fontHead">Closed Jobs</h1>
 <hr class="colorhr">
 
 <br>
@@ -127,7 +122,7 @@
         <th scope="col">Company</th>
         <th scope="col">Position</th>
         <th scope="col">Website</th>
-        <th scope="col">Date Applied</th>
+        <th scope="col">Date Closed</th>
         <th scope="col">Status</th>
         <th scope="col">Action</th>
         </tr>
@@ -143,9 +138,9 @@
                             <td>@X.Company.ToUpper()</td>
                             <td>@X.Position</td>
                             <td>@X.Website</td>
-                            <td>@X.ADate.ToShortDateString()</td>
+                            <td>@X.RDate.ToShortDateString()</td>
                             <td class="status">
-                                <form action="/updatestatushome/@X.JobId" method="post">
+                                <form action="/updatestatusfromclosed/@X.JobId" method="post">
                                     @{
                                         if(@X.Status == "Application Sent")
                                         {
@@ -176,32 +171,22 @@
                                                 <option value="Contact Made" class="contact">Contact Made</option>
                                                 <option value="Interview"class="interview">Interview</option>
                                             </select>
+                                        } else if(@X.Status == "Closed Job"){
+                                            <select name="Status" id="Status" class="closed text-center form-control" onchange="this.form.submit()">
+                                                <option value="Closed Job" class="closed">Closed Job</option>
+                                                <option value="Offer Made" class="offer">Offer Made</option>
+                                                <option value="Application Sent" class="applied">Application Sent</option>
+                                                <option value="Contact Made" class="contact">Contact Made</option>
+                                                <option value="Interview"class="interview">Interview</option>
+                                            </select>
                                         } 
                                     }
                                 </form>
                             </td>
                             <td>
-                                <a href="/thisjob/@X.JobId" class="expand btn btn-outline-primary">Expand</a>
-                                <a href="/edit/@X.JobId" class="expand btn btn-outline-warning">Edit</a>
-                                <button class="open-button expand btn btn-outline-danger" onclick="openForm()">Close</button>
-                                @* HIDDEN POP OUT FORM *@
-                                <div class="fontBody form-popup" id="myForm">
-                                  <form action="/closeh/@X.JobId" method="post" class="form-container">
-                                    <h5>Close this @X.Company job?</h5>
-                                    @* <input type="text" name="notes" placeholder="(optional) Notes for why job is closing" class="form-control"> *@
-                                    <span class="error1"></span>
-                                    <textarea name="CNotes" id="" cols="30" rows="6" onkeyup="countChar(this)" placeholder="Note for why job is closing (optional)" class="popText form-control"></textarea>
-                                    <div id="charNum" class="text-right"></div>
-                                    <br>
-                                    <p class="text-center">
-                                      <button type="submit" class="btn btn-primary">Save</button>
-                                      &nbsp;
-                                      <button type="button" class="btn btn-warning cancel" onclick="closeForm()">Exit</button>
-                                    </p>
-                                  </form>
-                                </div>
-                                
-                                @* <a href="/closeh/@X.JobId" class="expand btn btn-outline-danger">Close</a> *@
+                                <a href="/closed_thisjob/@X.JobId" class="expand btn btn-outline-primary">Expand</a>
+                                <a href="/closed_edit/@X.JobId" class="expand btn btn-outline-warning">Edit</a>
+                                <a href="/deletejob/@X.JobId" class="expand btn btn-outline-danger">DELETE</a>
                             </td>
                         </tr>
                     }

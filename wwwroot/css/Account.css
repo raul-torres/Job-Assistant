@@ -1,0 +1,65 @@
+body{
+    overflow-y: scroll !important;
+    background-color: #DADADA;
+    overflow-x: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.details{
+    border-bottom: 2px solid #1890ff;
+    border-right: 2px solid #1890ff;
+    margin-bottom: 3%;
+    transition: 0.5s;
+}
+.details:hover{
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.5);
+}
+.jumbotron{
+    background-color: whitesmoke;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 1rem 2rem;
+}
+.label{
+    text-decoration: none !important;
+    font-weight: bold;
+}
+.reghr{
+    background-color: black;
+}
+.infoPiece{
+    margin-bottom: 0 !important;
+    font-size: large !important;
+}
+.update{
+    color: rgb(77, 185, 221);
+    font-weight: bold;
+    transition: 0.5s;
+}
+.text-right{
+    margin-top: 6%;
+}
+.heading{
+    font-weight: bolder;
+}
+.form-control{
+    outline: 0 !important;
+    border-width: 0 0 1px !important;
+    border-color: #1890ff !important;
+    background-color: transparent;
+  }
+  .form-control:focus{
+    border-color: black !important;
+    background-color: transparent;
+    color: black;
+  }
+.cancel{
+    margin-left: 3%;
+    color: black;
+    transition: 0.5s;
+}
+.error1{
+    font-size: small;
+    color: red;
+}

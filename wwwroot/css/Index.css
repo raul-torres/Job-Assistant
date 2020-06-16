@@ -1,47 +1,66 @@
 body{
-    background-image: url("../img/cwhite.png");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    overflow: hidden;
-}
-
-.form-group{
-    margin-bottom: 10%;
-}
-.thisInput{
-    border:none;
-    border-bottom: 1px solid #1890ff;
-    padding: 5px 10px;
-    outline: none;
-    background-color: transparent;
-}
-.thisInput:focus{
-    background-color: transparent;
-}
-.getStarted{
-    margin-top: 4%;
+    overflow: auto;
 }
 .logo{
-    width: 12%;
-}
-.login{
-    margin-bottom: 2%;
-}
-.error1{
-    font-size: small;
-    color: red;
+    width: 38%;
 }
 
-@media only screen and (max-width: 600px){
+.marbot{
+    display: inline-block !important;
+}
+.textCenter{
+    display: inline-block !important;
+}
+.opt2{
+    font-size: large;
+}
+.title{
+    font-weight: bold;
+}
+.pushTop{
+    margin-top: 2%;
+    margin-left: 5%;
+}
+.blueColor{
+    color: #1890ff;
+}
+.image{
+    width: 40%;
+}
+.image{
+    border: 3px solid black;
+    margin-right: 2%;
+}
+.start{
+    font-size: large;
+    transition: 0.5s;
+    color: rgba(92, 115, 216, 0.877);
+}
+.start:hover{
+    color: blue;
+    font-size: x-large;
+}
+@media only screen and (max-width: 768px){
+
+    .borderBottom{
+        padding-bottom: 0;
+    }
+    .opt{
+        text-align: center !important;
+    }
+    .opt2{
+        margin-left: 1px;
+    }
     .logo{
-        width: 31%;
+        width: 150%;
     }
-    .getStarted{
-        margin-top: 30%;
+    .image{
+        width: 88%;
     }
-    .login{
-        margin-bottom: 11%;
+    .pushTop{
+        margin-top: 13%;
+    }
+    .title{
+        font-size: 1.3rem;
     }
 }

@@ -1,46 +1,54 @@
-﻿@model User
-
 <head>
+    <link rel="stylesheet" href="~/css/Register.css">
     <link rel="stylesheet" href="~/css/Index.css">
 </head>
 
-<div class="mainBody">
-    <a href="/">
-        <img src="~/img/logo.png" alt="Logo" class="logo">     
-    </a>
-
-    <h1 class="fontHead getStarted text-center">Let's Get Started</h1>
-    <p class="login text-center">
-        <a href="/login">Sign In To Existing Account</a>
-    <div class="row fontBody">
-        @* Creating space for left *@
-        <div class="col-md-3"></div>
-
-        <div class="col-md-6">
-            <form action="/register" method="post">
-                <div class="form-group">
-                    <span class="error1" asp-validation-for="Name"></span>
-                    <input placeholder="Name" class="thisInput form-control" asp-for="Name">
-                </div>
-                <div class="form-group">
-                    <span class="error1" asp-validation-for="Email"></span>
-                    <input placeholder="Email" class="thisInput form-control" asp-for="Email">
-                </div>
-                <div class="form-group">
-                    <span class="error1" asp-validation-for="Password"></span>
-                    <input placeholder="Password" class="thisInput form-control" asp-for="Password">
-                </div>
-                <div class="form-group">
-                    <span class="error1" asp-validation-for="ConfirmedPassword"></span>
-                    <input placeholder="Confirm Password" class="thisInput form-control" asp-for="ConfirmedPassword">
-                </div>
-                <div class="text-center">
-                    <input type="submit" value="Sign Up!" class="btn btn-outline-primary"> 
-                </div>
-            </form>
-        </div>
-        
-        @* Creating space for right *@
-        <div class="col-md-3"></div>
+<div class="fontBody row borderBottom">
+    <div class="col-4">
+        <a href="/">
+            <img src="~/img/logo.png" alt="Logo" class="logo">     
+        </a>
     </div>
+    <div class="col-4"></div>
+    <div class="col-4">
+        <br>
+        <div class="row">
+            <div class="col-6 text-right">
+                
+            </div>
+            <div class="col-6 text-center opt2">
+                <a href="/login" class="opt">Login</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* <div class="fontHead row pushTop">
+    <div class="col-6">
+        <h1 class="title">Don't just apply to jobs.</h1>
+        <h1 class="title">Keep track and <span class="blueColor">know where you've applied</span></h1>
+        <br>
+        <br>
+        <img src="~/img/index.jpg" alt="Image" class="image">
+    </div>
+    <div class="col-6">
+    </div>
+</div> *@
+
+<div class="fontHead row pushTop">
+    <div class="col-md-2"></div>
+    <div class="col-md-7">
+        <h1 class="title text-center">Don't just apply to jobs.</h1>
+        <h1 class="title text-left">Keep track and <span class="blueColor">know where you've applied.</span></h1>
+        <p class="text-center">
+            <a href="/register" class="start">Get Started</a>
+        </p>
+    </div>
+    <div class="col-md-3"></div>
+
+</div>
+<br>
+
+<div class="text-center">
+    <img src="~/img/index.jpg" alt="Image" class="image">
 </div>

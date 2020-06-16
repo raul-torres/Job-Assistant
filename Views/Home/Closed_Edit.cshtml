@@ -1,0 +1,124 @@
+@model Job
+
+<head>
+    <link rel="stylesheet" href="~/css/Edit.css">
+    <link rel="stylesheet" href="~/css/ThisJob.css">
+</head>
+
+
+<form action="/saveclosedchanges/@Model.JobId" method="post">
+    <div class="row">
+        <div class="col-4">
+            <a href="/edit/" class="fontHead options topbtn btn btn-success disabled">Updating Job...</a>
+        </div>
+        <div class="col-4">
+            <p class="text-center">
+                <a href="/home">
+                    <img src="~/img/logo.png" alt="Logo" class="logo">     
+                </a>
+            </p>
+        </div>
+        <div class="col-4">
+            <a href='javascript:history.go(-1)' class="fontHead text-dark options topbtn btn btn-outline-warning">Go Back</a>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="jumbotron">
+            <div class="row">
+                <div class="col-xs-4 col-md-4"></div>
+                <div class="col-xs-4 col-md-4">
+                    <div class="form-group">
+                        <span asp-validation-for="Company" class="validations"></span>
+                        <input asp-for="Company" id="Company" class="company text-center fontHead form-control">
+                    </div>
+                </div>
+                <div class="col-xs-4 col-md-4"></div>
+            </div>
+
+            <div class="row fontBody">
+                <div class="col-md-6 text-center">
+                    <label for="Position" class="label">POSITION</label>
+                    <div class="form-group">
+                        <span asp-validation-for="Position" class="validations"></span>
+                        <input asp-for="Position" id="Position" class="text-center fontBody form-control">
+                    </div>
+
+                    <label for="website" class="label">WEBSITE APPLIED THROUGH</label>
+                    <div class="form-group">
+                        <span asp-validation-for="Website" class="validations"></span>
+                        <input asp-for="Website" id="Website" class="text-center fontBody form-control">
+                    </div>
+
+                    <label for="ADate" class="label">DATE APPLIED</label>
+                    <div class="form-group">
+                        <span asp-validation-for="ADate" class="validations"></span>
+                        <input asp-for="ADate" id="ADate" class="text-center fontBody form-control" asp-format="{0:yyyy-MM-dd}" type="date">
+                    </div>
+                </div>
+                <div class="col-md-6 text-center">
+                    <label for="Notes" class="label">NOTES</label>
+                    <div class="form-group">
+                        <span asp-validation-for="Notes" class="validations"></span>
+                        <textarea asp-for="Notes" id="Notes" cols="30" rows="5"class="notes text-center fontBody form-control">@Model.Notes</textarea>
+                    </div>
+                    <label for="Status" class="label">STATUS</label>
+                    @{
+                        if(@Model.Status == "Application Sent")
+                        {
+                            <select asp-for="Status" id="Status" class="applied text-center form-control">
+                                <option value="Application Sent" class="applied">Application Sent</option>
+                                <option value="Contact Made" class="contact">Contact Made</option>
+                                <option value="Interview"class="interview">Interview</option>
+                                <option value="Offer Made" class="offer">Offer Made</option>
+                            </select>
+                        } else if(@Model.Status == "Contact Made"){
+                            <select asp-for="Status" id="Status" class="contact text-center form-control">
+                                <option value="Contact Made" class="contact">Contact Made</option>
+                                <option value="Interview"class="interview">Interview</option>
+                                <option value="Offer Made" class="offer">Offer Made</option>
+                                <option value="Application Sent" class="applied">Application Sent</option>
+                            </select>
+                        } else if(@Model.Status == "Interview"){
+                            <select asp-for="Status" id="Status" class="interview text-center form-control">
+                                <option value="Interview"class="interview">Interview</option>
+                                <option value="Offer Made" class="offer">Offer Made</option>
+                                <option value="Application Sent" class="applied">Application Sent</option>
+                                <option value="Contact Made" class="contact">Contact Made</option>
+                            </select>
+                        } else if(@Model.Status == "Offer Made"){
+                            <select asp-for="Status" id="Status" class="offer text-center form-control">
+                                <option value="Offer Made" class="offer">Offer Made</option>
+                                <option value="Application Sent" class="applied">Application Sent</option>
+                                <option value="Contact Made" class="contact">Contact Made</option>
+                                <option value="Interview"class="interview">Interview</option>
+                            </select>
+                        } else if(@Model.Status == "Closed Job"){
+                            <select name="Status" id="Status" class="closed text-center form-control" onchange="this.form.submit()">
+                                <option value="Closed Job" class="closedStat closed ">Closed Job</option>
+                                <option value="Offer Made" class="offer">Offer Made</option>
+                                <option value="Application Sent" class="applied">Application Sent</option>
+                                <option value="Contact Made" class="contact">Contact Made</option>
+                                <option value="Interview"class="interview">Interview</option>
+                            </select>
+                        } 
+                    }
+                </div>
+            </div>
+            <p class="text-center">
+                <label for="ClosedNotes" class="text-center label ">CLOSED NOTES</label>
+            </p>
+            <div class="form-group ">
+                <span asp-validation-for="ClosedNotes" class="validations"></span>
+                <textarea asp-for="ClosedNotes" id="ClosedNotes" cols="30" rows="5"class="notes text-center fontBody form-control">@Model.ClosedNotes</textarea>
+            </div>
+            <p class="text-center">
+                <input type="submit" value="Save Changes" class="botbtn btn btn-outline-primary">
+                <a href="/thisjob/@Model.JobId" class="botbtn text-dark btn btn-outline-warning">Cancel</a>
+            </p>
+        </form>
+    </div>
+
+

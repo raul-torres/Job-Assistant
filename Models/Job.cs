@@ -10,7 +10,9 @@ namespace JobAssistant.Models
         [Key]
         public int JobId {get;set;}
 
-
+        [Required(ErrorMessage = "Please include company name.")]
+        [StringLength(27, ErrorMessage = "Company name cannot be more than 27 characters.")] 
+        public string Position {get;set;}
 
         [Required(ErrorMessage = "Please include company name.")]
         [StringLength(27, ErrorMessage = "Company name cannot be more than 27 characters.")] 
@@ -20,27 +22,31 @@ namespace JobAssistant.Models
 
         [Required(ErrorMessage = "Please include how you applied.")]
         [StringLength(25, ErrorMessage = "Website name cannot be more than 25 characters.")] 
-        public string AppliedWebsite {get;set;}
+        public string Website {get;set;}
 
 
 
         [Required(ErrorMessage = "Please include date you applied.")]
         [Column(TypeName="Date")]
-        public DateTime AppliedDate {get;set;}
+        public DateTime ADate {get;set;}
 
 
 
-        public string status {get;set;} = "Applied(Waiting)";
+        public string Status {get;set;} = "Application Sent";
 
 
 
         [Column(TypeName="Date")]
-        public DateTime ResponseDate {get;set;}
+        public DateTime RDate {get;set;}
 
 
 
-        [StringLength(233, ErrorMessage = "Company name cannot be more than 27 characters.")] 
-        public string JobNotes {get;set;}
+        [StringLength(233, ErrorMessage = "Notes cannot exceed 233 characters")] 
+        public string Notes {get;set;}
+
+        [StringLength(233, ErrorMessage = "Closed notes cannot exceed 233 characters")] 
+        public string ClosedNotes {get;set;}
+
 
 /* -------------------------------------------------------------------------------- */
 // RELATIONS

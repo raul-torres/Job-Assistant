@@ -1,0 +1,46 @@
+.form-control{
+    border:none;
+    border-bottom: 1px solid #1890ff;
+    padding: 5px 10px;
+    outline: none;
+    background-color: transparent;
+    font-size: x-large;
+    margin-bottom: 5%;
+}
+.company{
+    font-size: 2em;
+    font-weight: bolder;
+}
+.notes{
+    border-right: 1px solid #1890ff;
+    border-left: 1px solid #1890ff;
+}
+    .form-control{
+        background-color: transparent;
+    }
+
+.offer{
+    background-color: green;
+}
+
+.interview{
+    background-color: greenyellow;
+}
+
+.contact{
+    background-color: yellow;
+}
+.applied{
+    background-color: lightsalmon;
+}
+.closedStat{
+    background-color: rgb(145, 24, 24);
+}
+
+.botbtn{
+    display: inline-block;
+}
+.validations{
+    font-size: small;
+    color: red;
+}

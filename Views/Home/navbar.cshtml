@@ -1,0 +1,48 @@
+@* <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+        <a href="/newjob" class="nav-item nav-link text-primary">New Job</a>
+        <a href="/respondedjobs" class="nav-item nav-link text-success">Responded Jobs</a>
+        <a href="/home" class="nav-item nav-link text-success">Waiting Jobs</a>
+        <a href="/closedjobs" class="nav-item nav-link text-success">Closed jobs</a>
+        <a class="nav-item nav-link" href="#">Account</a>
+      <a class="nav-item nav-link text-danger form-inline my-2 my-lg-0" href="#">Sign Out</a>
+    </div>
+  </div>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    
+  </div>
+  <a href="/home" class="form-inline my-2 my-lg-0">
+        <img src="~/img/logo.png" alt="Logo" class="logo">     
+  </a>
+</nav> *@
+
+<nav class="fontHead navbar navbar-expand-lg navbar-light bg-light">
+  @* <a class="navbar-brand" href="#">Navbar</a> *@
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      @* <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li> *@
+      <a href="/respondedjobs" class="nav-item nav-link text-success">Responded Jobs</a>
+      <a href="/home" class="nav-item nav-link text-success">Waiting Jobs</a>
+      <a href="/closedjobs" class="nav-item nav-link text-success">Closed jobs</a>
+      <a href="/newjob" class="nav-item nav-link text-primary">New Job</a>
+    </ul>
+    <div class="fontHead form-inline my-2 my-lg-0">
+      <a href="/home" class="form-inline my-2 my-lg-0">
+        <img src="~/img/logo.png" alt="Logo" class="logo">     
+      </a>
+      <a class="nav-item nav-link" href="#">Account</a>
+      <a class="nav-item nav-link text-danger form-inline my-2 my-lg-0" href="#">Sign Out</a>
+    </div>
+  </div>
+</nav>

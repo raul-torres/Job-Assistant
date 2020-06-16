@@ -1,0 +1,43 @@
+@model Goal
+
+<head>
+    <link rel="stylesheet" href="~/css/Account.css">
+    <link rel="stylesheet" href="~/css/ThisJob.css">
+    <link rel="stylesheet" href="~/css/Edit.css">
+</head>
+
+<div class="row">
+    <div class="col-xs-4 col-md-4">
+        <a href="/home">
+            <img src="~/img/logo.png" alt="Logo" class="logo">     
+        </a>
+    </div>
+    <div class="col-xs-4 col-md-4"></div>
+    <div class="col-xs-4 col-md-4">
+        <a href='/thisgoal/@Model.GoalId' class="fontHead options topbtn btn btn-outline-warning text-dark">Back To Goal Info</a>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<div class="jumbotron fontBody">
+    <h1 class="text-center fontBody heading">Update goal amount</h1>
+    <br>
+    <br><br>
+    <form action="/saveupdateamount/@Model.GoalId" method="post">
+        <div class="row">
+            <div class="col-md-4">
+                <span class="error1" asp-validation-for="Amount"></span>
+                <input placeholder="Number of jobs you aim apply for" class="thisInput form-control" asp-for="Amount">
+                <br>
+                <input type="submit" value="Save Changes" class="btn btn-outline-primary">
+                <a href="/thisgoal/@Model.GoalId" class="cancel">Cancel Changes</a>
+            </div>
+            <div class="col-md-4"></div>
+            <div class="col-md-4"></div>
+        </div>
+    </form>
+
+</div>

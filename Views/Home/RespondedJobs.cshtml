@@ -1,11 +1,18 @@
 @model List<Job>
 
 <head>
+    <link rel="stylesheet" href="~/css/RespondedJobs.css">
     <link rel="stylesheet" href="~/css/Home.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="~/js/close.js"></script>
 </head>
 
 
+<head>
+    <link rel="stylesheet" href="~/css/Home.css">
+</head>
+
+<div class="mainBody">
 @* NAVBAR *@
 <nav class="nav1 fontHead navbar navbar-expand-lg navbar-light bg-light">
   @* <a class="navbar-brand" href="#">Navbar</a> *@
@@ -19,10 +26,10 @@
         <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
       </li> *@
       <li class="nav-item">
-        <a href="/respondedjobs" class="nav-item nav-link text-primary">Responded Jobs</a>
+        <a href="/respondedjobs" class="nav-item nav-link text-muted disabled">Responded Jobs</a>
       </li>
       <li class="nav-item active">
-        <a href="/home" class="nav-item nav-link text-muted disabled">Waiting Jobs <span class="sr-only">(current)</span></a>
+        <a href="/home" class="nav-item nav-link text-primary">Waiting Jobs <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a href="/closedjobs" class="nav-item nav-link text-primary">Closed jobs</a>
@@ -50,8 +57,8 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
-      <a href="/respondedjobs" class="nav-item nav-link text-primary">Responded Jobs</a>
-      <a href="/home" class="nav-item nav-link text-muted disable">Waiting Jobs <span class="sr-only">(current)</span></a>
+      <a href="/respondedjobs" class="nav-item nav-link text-muted disabled">Responded Jobs</a>
+      <a href="/home" class="nav-item nav-link text-primary">Waiting Jobs <span class="sr-only">(current)</span></a>
       <a href="/closedjobs" class="nav-item nav-link text-primary">Closed jobs</a>
       <a href="/newjob" class="nav-item nav-link text-primary">New Job</a>
       <a class="nav-item nav-link text-primary" href="/account">Account</a>
@@ -109,15 +116,13 @@
   }
 }
 
-
-
 <br>
 <br>
-<h1 class="text-center fontHead">Waiting Jobs</h1>
+<h1 class="text-center fontHead">Responded Jobs</h1>
 <hr class="colorhr">
 
-<br>
-<br>
+    <br>
+    <br>
 
     <div style="overflow-x:auto;">
     <table class="table table-hover">
@@ -127,7 +132,7 @@
         <th scope="col">Company</th>
         <th scope="col">Position</th>
         <th scope="col">Website</th>
-        <th scope="col">Date Applied</th>
+        <th scope="col">Last Response Date</th>
         <th scope="col">Status</th>
         <th scope="col">Action</th>
         </tr>
@@ -143,9 +148,9 @@
                             <td>@X.Company.ToUpper()</td>
                             <td>@X.Position</td>
                             <td>@X.Website</td>
-                            <td>@X.ADate.ToShortDateString()</td>
+                            <td>@X.RDate.ToShortDateString()</td>
                             <td class="status">
-                                <form action="/updatestatushome/@X.JobId" method="post">
+                                <form action="/updatestatusresponded/@X.JobId" method="post">
                                     @{
                                         if(@X.Status == "Application Sent")
                                         {
@@ -186,7 +191,7 @@
                                 <button class="open-button expand btn btn-outline-danger" onclick="openForm()">Close</button>
                                 @* HIDDEN POP OUT FORM *@
                                 <div class="fontBody form-popup" id="myForm">
-                                  <form action="/closeh/@X.JobId" method="post" class="form-container">
+                                  <form action="/closer/@X.JobId" method="post" class="form-container">
                                     <h5>Close this @X.Company job?</h5>
                                     @* <input type="text" name="notes" placeholder="(optional) Notes for why job is closing" class="form-control"> *@
                                     <span class="error1"></span>
@@ -200,8 +205,6 @@
                                     </p>
                                   </form>
                                 </div>
-                                
-                                @* <a href="/closeh/@X.JobId" class="expand btn btn-outline-danger">Close</a> *@
                             </td>
                         </tr>
                     }
@@ -211,5 +214,7 @@
     </table>
     </div>
 </div>
+
+
 
 

@@ -1,0 +1,48 @@
+﻿@model User
+
+<head>
+    <link rel="stylesheet" href="~/css/Register.css">
+</head>
+
+<div class="mainBody">
+    <div class="borderBottom">
+        <a href="/">
+            <img src="~/img/logo.png" alt="Logo" class="logo">     
+        </a>
+    </div>
+
+    <h1 class="fontHead getStarted text-center">Let's Get Started</h1>
+    <p class="login text-center">
+        <a href="/login">Sign In To Existing Account</a>
+    <div class="row fontBody">
+        @* Creating space for left *@
+        <div class="col-md-3"></div>
+
+        <div class="col-md-6">
+            <form action="/register" method="post">
+                <div class="form-group">
+                    <span class="error1" asp-validation-for="Name"></span>
+                    <input placeholder="Name" class="thisInput form-control" asp-for="Name">
+                </div>
+                <div class="form-group">
+                    <span class="error1" asp-validation-for="Email"></span>
+                    <input placeholder="Email" class="thisInput form-control" asp-for="Email">
+                </div>
+                <div class="form-group">
+                    <span class="error1" asp-validation-for="Password"></span>
+                    <input placeholder="Password" class="thisInput form-control" asp-for="Password">
+                </div>
+                <div class="form-group">
+                    <span class="error1" asp-validation-for="ConfirmedPassword"></span>
+                    <input placeholder="Confirm Password" class="thisInput form-control" asp-for="ConfirmedPassword">
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Sign Up!" class="btn btn-outline-primary"> 
+                </div>
+            </form>
+        </div>
+        
+        @* Creating space for right *@
+        <div class="col-md-3"></div>
+    </div>
+</div>

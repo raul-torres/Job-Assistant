@@ -1,0 +1,50 @@
+@media only screen and (max-width: 768px){
+    .logo{
+        width: 50% !important;
+    }
+}
+@media only screen and (max-width: 600px){
+    .btn{
+        width: 100%;
+    }
+    .logo{
+        width: 115% !important;
+    }
+    .topbtn2{
+        height: 98%;
+    }
+}
+body{
+    background-color: #DADADA;
+    overflow-x: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.topbtn{
+    width: 106%;
+}
+.logo{
+    width: 32%;
+}
+.company{
+    margin-bottom: 5%;
+}
+.label{
+    text-decoration: underline;
+    font-size: x-large;
+}
+.infoPiece{
+    margin-bottom: 5%;
+    font-size: x-large;
+}
+.jumbotron{
+    background-color: whitesmoke;
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 1rem 2rem;
+}
+.closedStat{
+    background-color: rgb(145, 24, 24);
+    color: white;
+}

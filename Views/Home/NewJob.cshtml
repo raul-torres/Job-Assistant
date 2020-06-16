@@ -4,40 +4,58 @@
     <link rel="stylesheet" href="~/css/NewJob.css">
 </head>
 
-<a href="/home">
-    <img src="~/img/logo.png" alt="Logo" class="logo">     
-</a>
-@* Header *@
-<h1 class="top text-center fontHead">Let's Add A New Job</h1>
-<p class="return text-center">
-    <a href="/home">Return to Home</a>
-</p>
-
-<form action="/jobadder" method="post">
-    <div class="fontBody row">
-            <div class="col-md-6">
-                <div class="form-group">
-                    <span asp-validation-for="Company" class="validations"></span>
-                    <input asp-for="Company" class="form-control" placeholder="Company Name">
-                </div>
-                <div class="form-group">
-                    <span asp-validation-for="AppliedWebsite" class="validations"></span>
-                    <input asp-for="AppliedWebsite" class="dateIn form-control" placeholder="Where did you apply">
-                </div>
-                <div class="form-group">
-                    <span class="dateDesc">Date application was submitted</span>
-                    <span asp-validation-for="AppliedDate" class="validations"></span>
-                    <input asp-for="AppliedDate" class="form-control" type="date">
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="form-group">
-                    <span asp-validation-for="JobNotes" class="validations"></span>
-                    <textarea asp-for="JobNotes" id="" cols="30" rows="10" class="textArea form-control" placeholder="Job Notes"></textarea>
-                </div>
-            </div>
+<div class="row">
+    <div class="col-4">
+        <a href="/home">
+            <img src="~/img/logo.png" alt="Logo" class="logo">     
+        </a>
     </div>
-    <p class="text-center">
-        <input type="submit" value="Add Job" class="btn btn-outline-primary">
-    </p>
-</form>
+    <div class="col-4"></div>
+    <div class="col-4">
+        <a href='/home' class="fontHead options topbtn text-dark btn btn-outline-warning">Back To Home</a>
+    </div>
+</div>
+
+@* Header *@
+<h1 class="top text-center fontHead">New Job</h1>
+<hr class="colorhr">
+@* <p class="return text-center">
+    <a href="/home">Return to Home</a>
+</p> *@
+
+
+
+<div class="jumbotron">
+    <form action="/jobadder" method="post">
+        <div class="fontBody row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <span asp-validation-for="Company" class="validations"></span>
+                        <input asp-for="Company" class="form-control" placeholder="Company Name">
+                    </div>
+                    <div class="form-group">
+                        <span asp-validation-for="Website" class="validations"></span>
+                        <input asp-for="Website" class="dateIn form-control" placeholder="Where did you apply">
+                    </div>
+                    <div class="form-group">
+                        <span class="dateDesc">Date application was submitted</span>
+                        <span asp-validation-for="ADate" class="dateVal validations"></span>
+                        <input asp-for="ADate" class="form-control" type="date">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <span asp-validation-for="Position" class="validations"></span>
+                        <input asp-for="Position" class="position form-control" placeholder="Position Title">
+                    </div>
+                    <div class="form-group">
+                        <span asp-validation-for="Notes" class="validations"></span>
+                        <textarea asp-for="Notes" id="" cols="30" rows="6" class="textArea form-control" placeholder="Job Notes (Optional)"></textarea>
+                    </div>
+                </div>
+        </div>
+        <p class="text-center">
+            <input type="submit" value="Add Job" class="btn btn-outline-primary">
+        </p>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+@model Job
+
+<head>
+    <link rel="stylesheet" href="~/css/ThisJob.css">
+</head>
+
+<div class="row">
+    <div class="col-4">
+        <a href="/edit/@Model.JobId" class="fontHead options topbtn btn btn-outline-success">Update Job</a>
+    </div>
+    <div class="col-4">
+        <p class="text-center">
+            <a href="/home">
+                <img src="~/img/logo.png" alt="Logo" class="logo">     
+            </a>
+        </p>
+    </div>
+    <div class="col-4">
+        <a href='javascript:history.go(-1)' class="fontHead text-dark options topbtn btn btn-outline-warning">Go Back</a>
+    </div>
+</div>
+
+<br>
+<br>
+
+<div class="jumbotron">
+    <h1 class="company text-center fontHead">@Model.Company</h1>
+
+    <div class="row fontBody">
+        <div class="col-md-6 text-center">
+            <label for="website" class="label">POSITION</label>
+            <p class="infoPiece">@Model.Position</p>
+
+            <label for="website" class="label">WEBSITE APPLIED THROUGH</label>
+            <p class="infoPiece">@Model.Website</p>
+
+            <label for="website" class="label">DATE APPLIED</label>
+            <p class="infoPiece">@Model.ADate.ToShortDateString()</p>
+        </div>
+        <div class="col-md-6 text-center">
+            <label for="website" class="label">STATUS</label>
+            <p class="infoPiece">@Model.Status</p>
+
+            <label for="website" class="label">NOTES</label>
+            <p class="infoPiece">@Model.Notes</p>
+        </div>
+    </div>
+</div>
+
+

@@ -6,7 +6,10 @@ body{
     background-size: cover;
     overflow: hidden;
 }
-
+.borderBottom{
+  border-bottom: 2px solid white;
+  padding-bottom: 1%;
+}
 html{
   overflow: hidden;
 }

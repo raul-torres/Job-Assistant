@@ -1,0 +1,139 @@
+.topbtn{
+    width: 106%;
+}
+.logo{
+    width: 32%;
+}
+.status{
+    color: black;
+}
+.expand{
+    transition: 0.8s;
+}
+    .expand:hover{
+        color: purple;
+    }
+
+    .offer{
+        background-color: green;
+        color: white;
+    }
+    
+    .interview{
+        background-color: greenyellow;
+        width: 100%;
+    }
+    .closed{
+        background-color: darkred;
+        color: white;
+    }
+    
+    .contact{
+        background-color: yellow;
+    }
+    .applied{
+        background-color: lightsalmon;
+    }
+.logo{
+    width: 100% !important;
+    }
+.border-top {
+    border-top: 1px solid lightgray !important;
+    }
+.block{
+    display: block;
+}
+.form-popup {
+    display: none;
+    /* position: fixed; */
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    background-color: whitesmoke;
+    border: 2px solid gray;
+}
+.popText{
+    background-color: transparent;
+    outline: 0 !important;
+    border-width: 1px 0 1px !important;
+    border-color: #1890ff !important;
+    background-color: rgb(255, 255, 255);
+}
+.popText::placeholder{
+    font-size: large;
+}
+.error1{
+    font-size: small;
+    color: red;
+}
+.goals{
+    border-top: 1px solid #1890ff;
+    border-right: 1px solid #1890ff;
+    border-bottom: 1px solid #1890ff;
+    color: black;
+    padding: 1rem 2rem;
+    transition: 0.5s;
+}
+.goals:hover{
+    background-color: #1890ff;
+    color: white;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+}
+.goalComp{
+    background-color: #1890ff;
+    color: white;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    transition: 0.5s;
+}
+.goalComp:hover{
+    border-top: 1px solid #1890ff;
+    border-right: 1px solid #1890ff;
+    border-bottom: 1px solid #1890ff;
+    color: black;
+    padding: 1rem 2rem;
+}
+.numBer{
+    font-size: x-large;
+}
+.keep{
+    margin-top: 1%;
+}
+.star{
+    width: 11%;
+}
+.goal3{
+    font-weight: bolder;
+}
+@media only screen and (max-width: 768px){
+    .btn{
+        width: 100%;
+    }
+    .TOver{
+        overflow-x: auto;
+    }
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+      }
+    select{
+        overflow-x: auto;
+    }
+    .nav1{
+        display: none !important;
+    }
+    .popText{
+        width: 25em;
+    }
+}
+@media only screen and (min-width: 769px){
+    .nav2{
+        display: none !important;
+    }
+}

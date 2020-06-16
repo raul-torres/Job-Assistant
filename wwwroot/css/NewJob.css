@@ -1,5 +1,9 @@
 body{
+    background-color: #DADADA;
     overflow-x: hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .top{
     margin-top: 5%;
@@ -25,20 +29,48 @@ body{
     color: rgb(109, 109, 109);
     font-size: small;
     margin-left: 1%;
+    display: block;
 }
 .logo{
-    width: 12%;
+    width: 35%;
 }
 .return{
-    margin-bottom: 6%;
+    margin-bottom: 2%;
 }
 .validations{
     font-size: small;
     color: red;
 }
-
-@media only screen and (max-width: 600px){
+.dateVal{
+    display: block;
+    margin-left: 1%;
+}
+.position{
+    margin-bottom: 7%;
+}
+.jumbotron{
+    margin-left: 7%;
+    margin-right: 7%;
+    padding: 4rem 2rem;
+    background-color: whitesmoke;
+    margin-top: 3%;
+}
+.colorhr{
+    width: 10%;
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+.topbtn{
+    width: 100%;
+}
+.pushTop{
+    margin-top: 19px;
+}
+.lowerMarBot{
+    margin-bottom: 7%;
+}
+@media only screen and (max-width: 768px){
     .logo{
-        width: 30%;
+        width: 90%;
     }
 }
