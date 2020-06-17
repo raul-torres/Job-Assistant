@@ -5,6 +5,7 @@ body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    color: white;
 }
 .logo{
     width: 41% ;
@@ -67,6 +68,12 @@ body{
 .innerBtn{
     margin-top: 5%;
 }
+.h3PushPad{
+    text-shadow: 2px 2px black;
+}
+.h5PushAll{
+    text-shadow: 1px 1px black;
+}
 @media only screen and (max-width: 600px){
     .logo{
         width: 150%;
@@ -77,7 +84,7 @@ body{
 }
 @media only screen and (width: 768px){
     .logo{
-        width: 96%;
+        width: 84%;
     }
     .Outer{
         margin-left: 30%;
@@ -109,6 +116,6 @@ body{
         margin-top: 5%;
     }
     .logo{
-        width: 83% ;
+        width: 69% ;
     }
 }

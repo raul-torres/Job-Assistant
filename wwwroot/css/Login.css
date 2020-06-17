@@ -46,3 +46,9 @@ html{
     height: 62%;
   }
 }
+
+@media only screen and (width: 1024px){
+  .marTop{
+    margin-top: 60%;
+  }
+}

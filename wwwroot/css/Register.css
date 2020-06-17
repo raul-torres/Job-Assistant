@@ -41,14 +41,27 @@ body{
     color: red;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 768px){
     .logo{
         width: 31%;
     }
     .getStarted{
-        margin-top: 30%;
+        margin-top: 16%;
     }
     .login{
         margin-bottom: 11%;
+    }
+}
+@media only screen and (width: 1024px){
+    .logo{
+        width: 23%;
+    }
+    .getStarted{
+        margin-top: 23%;
+    }
+}
+@media only screen and (width: 768px){
+    .logo{
+        width: 23%;
     }
 }

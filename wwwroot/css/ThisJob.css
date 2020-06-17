@@ -1,18 +1,5 @@
-@media only screen and (max-width: 768px){
-    .logo{
-        width: 50% !important;
-    }
-}
-@media only screen and (max-width: 600px){
-    .btn{
-        width: 100%;
-    }
-    .logo{
-        width: 115% !important;
-    }
-    .topbtn2{
-        height: 98%;
-    }
+.infoPiece{
+    overflow: auto;
 }
 body{
     background-color: #DADADA;
@@ -22,7 +9,7 @@ body{
     background-size: cover;
 }
 .topbtn{
-    width: 106%;
+    width: 100%;
 }
 .logo{
     width: 32%;
@@ -49,4 +36,20 @@ body{
 .closedStat{
     background-color: rgb(145, 24, 24);
     color: white;
+}
+@media only screen and (max-width: 768px){
+    .logo{
+        width: 50%;
+    }
+}
+@media only screen and (max-width: 600px){
+    .btn{
+        width: 100%;
+    }
+    .logo{
+        width: 115% ;
+    }
+    .topbtn2{
+        height: 98%;
+    }
 }

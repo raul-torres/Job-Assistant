@@ -440,11 +440,6 @@ namespace JobAssistant.Controllers
             {
                 if(ModelState.IsValid)
                 {
-                    if(NewJob.ADate < DateTime.Today)
-                    {
-                        ModelState.AddModelError("AppliedDate", "Activity cannot be in the past.");
-                        return View("newjob");
-                    }
                     NewJob.UserId = (int)HttpContext.Session.GetInt32("UserInSession");
                     dbContext.Add(NewJob);
                     User ThisUser = dbContext.Users

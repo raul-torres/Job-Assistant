@@ -1,14 +1,23 @@
-body{
+body, html{
     overflow-x: hidden;
 }
-
+.table td.fit, 
+.table th.fit {
+    white-space: nowrap;
+    width: 1%;
+}
+.act{
+    width: auto;
+}
 .jumbotron{
     border: 2px solid #1890ff;
     background-color: whitesmoke;
     margin-right: 2%;
     margin-left: 2%;
 }
-
+.form-control1{
+    width: auto !important;
+}
 .topbtn{
     width: 106%;
 }
@@ -20,6 +29,10 @@ body{
 }
 .expand{
     transition: 0.8s;
+    display: inline-block;
+}
+.inline{
+    display: inline-block;
 }
     .expand:hover{
         color: purple;
@@ -121,8 +134,8 @@ body{
     font-weight: bolder;
 }
 @media only screen and (max-width: 768px){
-    .btn{
-        width: 100%;
+    .spacer{
+        width: 240px;
     }
     .TOver{
         overflow-x: auto;

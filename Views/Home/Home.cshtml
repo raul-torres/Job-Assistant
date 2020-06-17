@@ -148,28 +148,28 @@
                                     @{
                                         if(@X.Status == "Application Sent")
                                         {
-                                            <select name="Status" id="Status" class="applied text-center form-control" onchange="this.form.submit()">
+                                            <select name="Status" id="Status" class="applied text-center form-control1 form-control" onchange="this.form.submit()">
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                                 <option value="Contact Made" class="contact">Contact Made</option>
                                                 <option value="Interview"class="interview">Interview</option>
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                             </select>
                                         } else if(@X.Status == "Contact Made"){
-                                            <select name="Status" id="Status" class="contact text-center form-control" onchange="this.form.submit()">
+                                            <select name="Status" id="Status" class="contact text-center form-control1 form-control" onchange="this.form.submit()">
                                                 <option value="Contact Made" class="contact">Contact Made</option>
                                                 <option value="Interview"class="interview">Interview</option>
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                             </select>
                                         } else if(@X.Status == "Interview"){
-                                            <select name="Status" id="Status" class="interview text-center form-control" onchange="this.form.submit()">
+                                            <select name="Status" id="Status" class="interview text-center form-control1 form-control" onchange="this.form.submit()">
                                                 <option value="Interview"class="interview">Interview</option>
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                                 <option value="Contact Made" class="contact">Contact Made</option>
                                             </select>
                                         } else if(@X.Status == "Offer Made"){
-                                            <select name="Status" id="Status" class="offer text-center form-control" onchange="this.form.submit()">
+                                            <select name="Status" id="Status" class="offer text-center form-control1 form-control" onchange="this.form.submit()">
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                                 <option value="Contact Made" class="contact">Contact Made</option>
@@ -179,15 +179,18 @@
                                     }
                                 </form>
                             </td>
-                            <td>
-                                <a href="/thisjob/@X.JobId" class="expand btn btn-outline-primary">Expand</a>
-                                <a href="/edit/@X.JobId" class="expand btn btn-outline-warning">Edit</a>
-                                <button class="open-button expand btn btn-outline-danger" onclick="openForm()">Close</button>
+                            <td scope="col">
+                                <a href="/thisjob/@X.JobId" class="expand btn btn-primary">Expand</a>
+                                &nbsp;
+                                <a href="/edit/@X.JobId" class="expand btn btn-warning">Edit</a>
+                                &nbsp;
+                                <button class="open-button expand btn btn-danger" onclick="openForm()">Close</button>
+                                <div class="spacer"></div>
                                 @* HIDDEN POP OUT FORM *@
                                 <div class="fontBody form-popup" id="myForm">
                                   <form action="/closeh/@X.JobId" method="post" class="form-container">
-                                    <h5>Close this @X.Company job?</h5>
-                                    @* <input type="text" name="notes" placeholder="(optional) Notes for why job is closing" class="form-control"> *@
+                                    <h5 class="text-center">Close this @X.Company job?</h5>
+                                    @* <input type="text" name="notes" placeholder="(optional) Notes for why job is closing" class="form-control1 form-control"> *@
                                     <span class="error1"></span>
                                     <textarea name="CNotes" id="" cols="30" rows="6" onkeyup="countChar(this)" placeholder="Note for why job is closing (optional)" class="popText form-control"></textarea>
                                     <div id="charNum" class="text-right"></div>

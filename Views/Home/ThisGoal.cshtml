@@ -1,72 +1,73 @@
 @model Goal
 <head>
-    <link rel="stylesheet" href="~/css/Account.css">
     <link rel="stylesheet" href="~/css/ThisJob.css">
     <link rel="stylesheet" href="~/css/Edit.css">
+    <link rel="stylesheet" href="~/css/Account.css">
     @* <link rel="stylesheet" href="~/css/Login.css"> *@
 </head>
-
-<div class="row">
-    <div class="col-xs-4 col-md-4">
-        <a href="/home">
-            <img src="~/img/logo.png" alt="Logo" class="logo">     
-        </a>
-    </div>
-    <div class="col-xs-4 col-md-4"></div>
-    <div class="col-xs-4 col-md-4">
-        <a href='/home' class="fontHead options topbtn text-dark btn btn-outline-warning">Back To Home</a>
-    </div>
-</div>
-
-<br>
-<br>
-
-@* <h1 class="text-center fontHead">Welcome to your account @Model.Name</h1> *@
-
-<br>
-<br>
-<br>
-
-<div class="jumbotron fontBody">
-    <h1 class="text-center fontBody heading">Current Goal</h1>
-    <hr class="colorhr">
+<div class="mainBody">
     <div class="row">
-        <div class="col-md-6">
-            <label class="label">Number of jobs applied to</label>
-            <p class="infoPiece">@Model.SoFar</p>
+        <div class="col-4">
+            <a href="/home">
+                <img src="~/img/logo.png" alt="Logo" class="logo">     
+            </a>
         </div>
-        <div class="col-md-6"></div>
-    </div>
-    <hr class="reghr">
-    <div class="row">
-        <div class="col-md-6">
-            <label class="label">Total amount to reach goal</label>
-            <p class="infoPiece">@Model.Amount</p>
-        </div>
-        <div class="col-md-6">
-            <p class="text-right">
-                <a href="/updateamount/@Model.GoalId" class="update">Update goal amount</a>
-            </p>
+        <div class="col-4"></div>
+        <div class="col-4">
+            <a href='/home' class="fontHead options topbtn text-dark btn btn-outline-warning">Back To Home</a>
         </div>
     </div>
-    <hr class="reghr">
-    <div class="row">
-        <div class="col-md-6">
-            <label class="label">Goal created on</label>
-            <p class="infoPiece">@Model.CreatedAt.ToShortDateString()</p>
+
+    <br>
+    <br>
+
+    @* <h1 class="text-center fontHead">Welcome to your account @Model.Name</h1> *@
+
+    <br>
+    <br>
+    <br>
+
+    <div class="jumbotron fontBody">
+        <h1 class="text-center fontBody heading">Current Goal</h1>
+        <hr class="colorhr">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="label">Number of jobs applied to</label>
+                <p class="infoPiece">@Model.SoFar</p>
+            </div>
+            <div class="col-md-6"></div>
         </div>
-        <div class="col-md-6"></div>
+        <hr class="reghr">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="label">Total amount to reach goal</label>
+                <p class="infoPiece">@Model.Amount</p>
+            </div>
+            <div class="col-md-6">
+                <p class="text-right">
+                    <a href="/updateamount/@Model.GoalId" class="update">Update goal amount</a>
+                </p>
+            </div>
+        </div>
+        <hr class="reghr">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="label">Goal created on</label>
+                <p class="infoPiece">@Model.CreatedAt.ToShortDateString()</p>
+            </div>
+            <div class="col-md-6"></div>
+        </div>
+        <hr class="reghr">
+        <div class="row">
+            <div class="col-md-6">
+                <label class="label">Delete this goal?</label>
+            </div>
+            <div class="col-md-6">
+                <p class="text-right text-danger">
+                    <a href="/deletegoal/@Model.GoalId" class="update text-danger">Delete Goal</a>
+                </p>
+            </div>
+        </div>
+        <hr class="reghr">
     </div>
-    <hr class="reghr">
-    <div class="row">
-        <div class="col-md-6">
-            <label class="label">Delete this goal?</label>
-        </div>
-        <div class="col-md-6">
-            <p class="text-right text-danger">
-                <a href="/deletegoal/@Model.GoalId" class="update text-danger">Delete Goal</a>
-            </p>
-        </div>
-    </div>
-    <hr class="reghr">
 </div>

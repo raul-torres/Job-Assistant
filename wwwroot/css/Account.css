@@ -1,10 +1,12 @@
 body{
-    overflow-y: scroll !important;
     background-color: #DADADA;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.mainBody{
+    overflow-x: hidden;
 }
 .details{
     border-bottom: 2px solid #1890ff;
@@ -55,11 +57,32 @@ body{
     color: black;
   }
 .cancel{
-    margin-left: 3%;
     color: black;
     transition: 0.5s;
 }
 .error1{
     font-size: small;
     color: red;
+}
+@media only screen and (max-width: 600px){
+    .logo{
+        width: 120%;
+    }
+}
+@media only screen and (width: 768px){
+    .logo{
+        width: 73%;
+    }
+    .jumbotron{
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+@media only screen and (width: 1024px){
+    .logo{
+        width: 56%;
+    }
+    .jumbotron{
+        margin-top: 23%;
+    }
 }
