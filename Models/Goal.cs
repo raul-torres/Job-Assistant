@@ -11,7 +11,7 @@ namespace JobAssistant.Models
         public int GoalId {get;set;}
 
         [Required(ErrorMessage = "Include how many jobs you aim to apply to")]
-        [Range(1, 100, ErrorMessage="Amount has to be between 1 and 100")]
+        [Range(1, 1000, ErrorMessage="Amount has to be between 1 and 1000")]
         public int? Amount {get;set;}
 
         public int SoFar {get;set;} = 0;
