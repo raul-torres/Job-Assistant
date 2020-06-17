@@ -532,7 +532,7 @@ namespace JobAssistant.Controllers
                     CurrentJob.ClosedNotes = UpdatedJob.ClosedNotes;
                     CurrentJob.UpdatedAt = DateTime.Now;
                     dbContext.SaveChanges();
-                    return RedirectToAction("closedjobs");
+                    return Redirect("/closed_thisjob/" + IdJob);
                 }
                 return View("Closed_Edit", CurrentJob);
             }

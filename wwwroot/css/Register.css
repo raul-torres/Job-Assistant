@@ -40,7 +40,11 @@ body{
     font-size: small;
     color: red;
 }
-
+.atleast{
+    font-size: small;
+    display: block;
+    color: gray;
+}
 @media only screen and (max-width: 768px){
     .logo{
         width: 31%;

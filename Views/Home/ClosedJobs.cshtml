@@ -76,7 +76,7 @@
   } else if(ViewBag.HP == 1){
       <div class="row">
         <div class="col-md-4">
-          <a href="/thiscompgoal/@ViewBag.Goal.GoalId">
+          <a href="/thisgoal/@ViewBag.Goal.GoalId">
             <div class="goals fontBody">
               <h5>Today's Goal: Apply to @ViewBag.Goal.Amount jobs</h5>
               <span class="fontBody"> <span class="text-primary numBer">@ViewBag.Goal.SoFar / @ViewBag.Goal.Amount</span> jobs Applied</span>
@@ -90,7 +90,7 @@
   } else{
     <div class="row">
         <div class="col-md-4">
-          <a href="/thisgoal/@ViewBag.Goal.GoalId">
+          <a href="/thiscompgoal/@ViewBag.Goal.GoalId">
             <div class="goalComp goal3 fontBody">
               <h5 class="text-center goal3">Awesome you reached your goal</h5>
               <p class="text-center">
@@ -106,7 +106,7 @@
   }
 }
 
-
+<br>
 <h1 class="text-center fontHead">Closed Jobs</h1>
 <hr class="colorhr">
 
@@ -142,35 +142,35 @@
                                         if(@X.Status == "Application Sent")
                                         {
                                             <select name="Status" id="Status" class="applied text-center form-control1 form-control" onchange="this.form.submit()">
-                                                <option value="Application Sent" class="applied">Application Sent</option>
+                                                <option value="Application Sent" class="applied" selected>Application Sent</option>
                                                 <option value="Contact Made" class="contact">Contact Made</option>
                                                 <option value="Interview"class="interview">Interview</option>
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                             </select>
                                         } else if(@X.Status == "Contact Made"){
                                             <select name="Status" id="Status" class="contact text-center form-control1 form-control" onchange="this.form.submit()">
-                                                <option value="Contact Made" class="contact">Contact Made</option>
+                                                <option value="Contact Made" class="contact" selected>Contact Made</option>
                                                 <option value="Interview"class="interview">Interview</option>
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                             </select>
                                         } else if(@X.Status == "Interview"){
                                             <select name="Status" id="Status" class="interview text-center form-control1 form-control" onchange="this.form.submit()">
-                                                <option value="Interview"class="interview">Interview</option>
+                                                <option value="Interview"class="interview" selected>Interview</option>
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                                 <option value="Contact Made" class="contact">Contact Made</option>
                                             </select>
                                         } else if(@X.Status == "Offer Made"){
                                             <select name="Status" id="Status" class="offer text-center form-control1 form-control" onchange="this.form.submit()">
-                                                <option value="Offer Made" class="offer">Offer Made</option>
+                                                <option value="Offer Made" class="offer" selected>Offer Made</option>
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                                 <option value="Contact Made" class="contact">Contact Made</option>
                                                 <option value="Interview"class="interview">Interview</option>
                                             </select>
                                         } else if(@X.Status == "Closed Job"){
                                             <select name="Status" id="Status" class="closed text-center form-control1 form-control" onchange="this.form.submit()">
-                                                <option value="Closed Job" class="closed">Closed Job</option>
+                                                <option value="Closed Job" class="closed" selected>Closed Job</option>
                                                 <option value="Offer Made" class="offer">Offer Made</option>
                                                 <option value="Application Sent" class="applied">Application Sent</option>
                                                 <option value="Contact Made" class="contact">Contact Made</option>

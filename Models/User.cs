@@ -22,7 +22,7 @@ namespace JobAssistant.Models
 
 
         [DataType(DataType.Password)]
-        [MinLength(8, ErrorMessage ="Password must be atleast 8 characters long")]
+        [MinLength(7, ErrorMessage ="Password must be atleast 7 characters long")]
         [Required(ErrorMessage = "Password is required")]
         [RegularExpression("^.*(?=.{6,18})(?=.*)(?=.*[A-Za-z]).*$", ErrorMessage = "Password must contain atleast 1 letter, 1 number")]
         public string Password {get;set;}
