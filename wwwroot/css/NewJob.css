@@ -54,6 +54,7 @@ body{
     padding: 4rem 2rem;
     background-color: whitesmoke;
     margin-top: 3%;
+    border: 2px solid #1890ff;
 }
 .colorhr{
     width: 10%;

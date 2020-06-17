@@ -1,10 +1,18 @@
 body{
-    overflow: auto;
+    overflow: hidden;
+    background-image: linear-gradient(90deg, rgba(0,0,0,0.6) 0%, rgba(255, 255, 255, 1.0) 100%), url("../img/index.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
 }
 .logo{
-    width: 38%;
+    width: 41% ;
 }
-
+.topRow{
+    border-bottom: 1px solid white;
+    padding-bottom: 1%;
+}
 .marbot{
     display: inline-block !important;
 }
@@ -13,9 +21,6 @@ body{
 }
 .opt2{
     font-size: large;
-}
-.title{
-    font-weight: bold;
 }
 .pushTop{
     margin-top: 2%;
@@ -40,27 +45,70 @@ body{
     color: blue;
     font-size: x-large;
 }
-@media only screen and (max-width: 768px){
-
-    .borderBottom{
-        padding-bottom: 0;
-    }
-    .opt{
-        text-align: center !important;
-    }
-    .opt2{
-        margin-left: 1px;
-    }
+.Outer{
+    border: 2px solid #1890ff;
+    margin-top: 24%;
+    margin-left: 12%;
+    height: 78%;
+    width: 61%;
+}
+.h5PushAll{
+    margin-bottom: 30%;
+    padding: 1rem 1rem;
+    font-weight: bolder;
+}
+.h3PushPad{
+    padding: 1rem 1rem;
+    font-weight: bolder;
+}
+.Inner{
+    border-top: 2px solid #1890ff;
+}
+.innerBtn{
+    margin-top: 5%;
+}
+@media only screen and (max-width: 600px){
     .logo{
         width: 150%;
     }
-    .image{
-        width: 88%;
+    .Outer{
+        margin-left: 21%;
     }
-    .pushTop{
-        margin-top: 13%;
+}
+@media only screen and (width: 768px){
+    .logo{
+        width: 96%;
     }
-    .title{
-        font-size: 1.3rem;
+    .Outer{
+        margin-left: 30%;
+        margin-top: 25%;
+        width: 40%;
+        height: 67%;
+    }
+}
+@media only screen and (width: 1024px){
+    .Outer{
+        border: 2px solid #1890ff;
+        margin-top: 38%;
+        height: 77%;
+        width: 82%;
+    }
+    .h5PushAll{
+        margin-bottom: 30%;
+        padding: 1rem 1rem;
+        font-weight: bolder;
+    }
+    .h3PushPad{
+        padding: 1rem 1rem;
+        font-weight: bolder;
+    }
+    .Inner{
+        border-top: 2px solid #1890ff;
+    }
+    .innerBtn{
+        margin-top: 5%;
+    }
+    .logo{
+        width: 83% ;
     }
 }

@@ -397,7 +397,7 @@ namespace JobAssistant.Controllers
                 if(dbContext.Users.Any(u => u.Email == NewUser.Email))
                 {
                     ModelState.AddModelError("Email", "Email is already in use.");
-                    return View("Index");
+                    return View("Register");
                 }
                 PasswordHasher<User> Hasher = new PasswordHasher<User>();
                 NewUser.Password = Hasher.HashPassword(NewUser, NewUser.Password);
@@ -407,7 +407,7 @@ namespace JobAssistant.Controllers
                 HttpContext.Session.SetInt32("UserInSession", NewUser.UserId);
                 return RedirectToAction("Home");
             }
-            return View("Index");
+            return View("Register");
         }
 
     // HANDLING USER LOGIN ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

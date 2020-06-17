@@ -15,25 +15,26 @@
         <br>
         <br>
         <br>
-        <br>
-        <br>
         <h1 class="fontHead text-center">Welcome Back</h1>
         <div class="fontBody text-center">
             <span>Or</span> <a href="/register"> Create an Account</a>
         </div>
         <h4></h4>
         <br>
-        <form action="/access" method="post" class="fontBody">
-            <span asp-validation-for="LEmail" class="validations"></span>
-            <input asp-for="LEmail" class="form-control" placeholder="User Name" value="raul@mail.com">
-            <br>
-            <span asp-validation-for="LPassword" class="validations"></span>
-            <input asp-for="LPassword" class="form-control" placeholder="Password" value="Q@123456789">
-            <br>
-            <div class="text-center">
-                <input type="submit" value="Sign In" class="btn btn-outline-primary">
-            </div>
-        </form>
+        <div class="jumbotron">
+            <form action="/access" method="post" class="fontBody">
+                <span asp-validation-for="LEmail" class="validations"></span>
+                <input asp-for="LEmail" class="form-control" placeholder="User Name" value="raul@mail.com">
+                <br>
+                <span asp-validation-for="LPassword" class="validations"></span>
+                <input asp-for="LPassword" class="form-control" placeholder="Password" value="Q@123456789">
+                <br>
+                <div class="text-center">
+                    <input type="submit" value="Sign In" class="btn btn-outline-primary">
+                </div>
+            </form>
+
+        </div>
     </div>
     <div class="col-md-4"></div>
 </div>
